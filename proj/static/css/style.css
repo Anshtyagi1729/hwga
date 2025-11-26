@@ -1,0 +1,201 @@
+/* Import Google Font 'Inter' for a modern, clean look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --dark-bg: #212529;
+    --light-bg: #f8f9fa;
+    --card-hover-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   Global Styles
+   ========================================= */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f6f8; /* Slightly darker than white for contrast */
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* =========================================
+   Navigation
+   ========================================= */
+.navbar {
+    background: linear-gradient(135deg, #1e2124 0%, #2c3035 100%) !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+/* =========================================
+   Cards & Containers
+   ========================================= */
+.card {
+    border: none;
+    border-radius: 12px; /* Softer corners */
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add a lift effect to cards on hover for interactivity */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow) !important;
+}
+
+/* Don't lift cards that contain the visualization images (too distracting) */
+.card:has(img):hover {
+    transform: none;
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px 12px 0 0 !important;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+/* The Welcome Hero Section in Index */
+.bg-light.rounded-3.shadow-sm.border {
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    border: 1px solid #e9ecef !important;
+}
+
+/* =========================================
+   Buttons & Forms
+   ========================================= */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.2s;
+}
+
+.btn-outline-primary:hover, 
+.btn-outline-success:hover, 
+.btn-outline-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+textarea.form-control {
+    border-radius: 8px;
+    border-color: #dee2e6;
+    resize: none; /* Prevent manual resizing breaking layout */
+}
+
+textarea.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* =========================================
+   Tables & Badges
+   ========================================= */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 1rem 0.75rem;
+}
+
+.badge {
+    padding: 0.5em 0.8em;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Custom badge colors for Sentiment */
+.bg-success { background-color: #2ecc71 !important; } /* Positive */
+.bg-danger { background-color: #e74c3c !important; }  /* Negative */
+.bg-secondary { background-color: #95a5a6 !important; } /* Neutral/Source */
+
+/* =========================================
+   Dashboard Visualizations
+   ========================================= */
+/* Ensure images fit nicely within cards */
+.card-body img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Plotly Iframe Container */
+.ratio iframe {
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Word Cloud Tabs */
+.nav-tabs .nav-link {
+    color: #495057;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+    color: var(--primary-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: transparent;
+}
+
+/* =========================================
+   Utilities
+   ========================================= */
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1; 
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8; 
+}
